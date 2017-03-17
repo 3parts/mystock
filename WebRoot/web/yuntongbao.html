@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>云通宝</title>
+	<link type="text/css" rel="stylesheet" href="css/yuntongbao.css" />
+	<script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext/ext-all.js"></script>
+    <script type="text/javascript" src="../ext/ext-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../ext/userExt/Ext.ux.js"></script>
+    
+    <script type="text/javascript">
+    	
+    	Ext.onReady(function(){
+    		var arr = Ext.query("img");
+    		for(var i=0;i<arr.length;i++){
+	    		var id = Ext.id();
+	    		arr[i].id=id;
+	    		var src = arr[i].src;
+	    		
+	    		if(src.indexOf('link19.png')>-1){ /*收入*/
+	    			Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../financial/income.jsp','收入','sr','');
+            		});
+	    		}else if(src.indexOf('link20.png')>-1){ /*应付款*/
+	    			Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../financial/ap.jsp','应付款','yfk','');
+            		});
+	    		}else if(src.indexOf('link22.png')>-1){ /*支出*/
+	    			Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../financial/outcome.jsp','支出','zc','');
+            		});
+	    		}else if(src.indexOf('link21.png')>-1){ /*应收款*/
+	    			Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../financial/ar.jsp','应收款','ysk','');
+            		});
+	    		}else if(src.indexOf('link23.png')>-1){ /*资金余额*/
+	    			Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../financial/balance.jsp','资金余额','zjye','');
+            		});
+	    		}
+    		}
+    	});
+    	
+    </script>
+    
+</head>
+<body>
+<div class="all-1">
+<div class="box1">
+  <div class="top1">
+    <div class="yun1"><img src="images/link21.png" onmouseover="this.src='images/hover21.png'" onmouseout="this.src='images/link21.png'" onmousedown="this.src='images/press21.png'" onmouseup="this.src='images/hover21.png'"/></div>
+    <div class="yun2"><img src="images/arr-11.png" height="50px" width="100px" /></div>
+    <div class="yun3"><img src="images/link19.png" onmouseover="this.src='images/hover19.png'" onmouseout="this.src='images/link19.png'" onmousedown="this.src='images/press19.png'" onmouseup="this.src='images/hover19.png'"/></div>
+    <div class="yun4"><img src="images/arr-11.png" height="50px" width="100px" /></div>
+  </div>
+  <div class="top2">
+    <div class="yun1"><img src="images/link20.png" onmouseover="this.src='images/hover20.png'" onmouseout="this.src='images/link20.png'" onmousedown="this.src='images/press20.png'" onmouseup="this.src='images/hover20.png'"/></div>
+    <div class="yun2"><img src="images/arr-11.png" height="50px" width="100px" /></div>
+    <div class="yun3"><img src="images/link22.png" onmouseover="this.src='images/hover22.png'" onmouseout="this.src='images/link22.png'" onmousedown="this.src='images/press22.png'" onmouseup="this.src='images/hover22.png'"/></div>
+    <div class="yun4"><img src="images/arr-11.png" height="50px" width="100px" /></div>
+  </div>
+</div>
+<div class="box2"><img src="images/link23.png" onmouseover="this.src='images/hover23.png'" onmouseout="this.src='images/link23.png'" onmousedown="this.src='images/press23.png'" onmouseup="this.src='images/hover23.png'"/></div>
+</div>
+</body>
+</html>

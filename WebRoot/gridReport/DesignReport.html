@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Web报表(B/S报表)演示 - 以AJAX方式载入并保存设计的报表</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        html,body {
+            margin:0;
+            height:100%;
+        }
+    </style>
+	<script src="CreateControl.js" type="text/javascript"></script>
+	<script src="GRUtility.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	var report="a";
+//按AJAX异步方式请求报表模板数据，在响应事件中将模板数据加载进设计器中
+function AjaxDesignerLoad(ReportDesigner, ReportLoadUrl) 
+{
+    var xmlhttp = CreateXMLHttpRequest();
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            ReportDesigner.Report.LoadFromStr(xmlhttp.responseText);
+            ReportDesigner.Reload();
+        }
+    }
+    xmlhttp.open("POST", encodeURI(ReportLoadUrl), true);
+    xmlhttp.send();
+}
+
+//按AJAX异步方式保存设计的报表模板数据
+function AjaxDesignerSave(ReportDesigner, ReportSaveUrl) 
+{
+	ReportDesigner.Post();
+	var strReport = ReportDesigner.Report.SaveToStr();
+	
+    var xmlhttp = CreateXMLHttpRequest();
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            alert("报表设计已经成功保存!");
+        }
+    }
+    xmlhttp.open("POST", encodeURI(ReportSaveUrl), true);
+    xmlhttp.send(strReport);
+}
+
+function window_onload() 
+{
+
+    //载入要设计的报表模板
+    AjaxDesignerLoad(ReportDesigner, "cs_getRead.do?report=2a.grf"); 
+}
+
+function OnSaveReport()
+{
+    //保存设计的报表模板
+    AjaxDesignerSave(ReportDesigner, "cs_saveReport.do?report=2a.grf"); 
+
+	//忽略掉设计器本身的保存行为
+	ReportDesigner.DefaultAction = false; 
+}
+	</script>
+</head>
+<body style="margin:0" onload="window_onload()">
+    <script type="text/javascript"> 
+        //报表模板载入URL、报表数据URL与报表模板保存URL这三个参数均不设置，而是用AJAX与WEB服务器传输数据，在浏览器中再调用报表插件的相关接口传输数据
+        CreateDesignerEx("100%", "100%", "", "", "", "<param name='OnSaveReport' value='OnSaveReport'>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+body {
+	text-align:center;
+}
+.top {
+	height:420px;
+	width:940px;
+	margin:30px auto;
+}
+.box1 {
+	height:420px;
+	width:580px;
+	float:left;
+}
+.bo-1 {
+	height:75px;
+}
+.bo1 {
+	float:left;
+	margin:20px 5px 0 80px;
+}
+.bo2 {
+	float:left;
+}
+.bo3 {
+	float:left;
+	margin:15px 10px;
+}
+.bo-2 {
+	height:50px;
+}
+.bo4 {
+	float:left;
+	margin:0 5px 0 20px;
+}
+.bo5 {
+	float:left;
+	margin:10px 4px 0 4px;
+}
+.bo6 {
+	float:left;
+	margin:0 3px;
+}
+.bo7 {
+	float:left;
+	margin:10px 5px 0 5px;
+}
+.bo8 {
+	margin:0 0 0 90px;
+}
+.bo-3 {
+	height:50px;
+}
+.bo9 {
+	float:left;
+	margin:0 2px 0 115px;
+}
+.bo10 {
+	float:left;
+	margin-left:220px; /**RC加入 让目标左边移动 220px**/
+}
+.bo11 {
+	float:left;
+	margin:5px 0 0 85px;
+}
+.bo12 {
+	float:left;
+	margin:15px 0 0 0;
+}
+.bo13 {
+	float:left;
+	margin:30px 0 0 10px;
+}
+.box2 {
+	float:left;
+	
+}
+.box3 {
+	height:420px;
+	float:left;
+}
+.bo-4 {
+	height:150px;
+}
+.bo14 {
+	float:left;
+	margin:15px 3px 0 3px;
+}
+.bo15 {
+	float:left;
+	margin:30px 3px 0 3px;
+}
+.bo144 {
+	float:left;
+	margin:5px 3px 0 3px;
+}
+.bo141 {
+	float:left;
+	margin:52px 3px 0 3px;
+}
+.bo1441 {
+	float:left;
+	margin:40px 3px 0 3px;
+}
+.bo155 {
+	float:left;
+	margin:16px 3px 20px 3px;
+}
+.bottom {
+	height:50px;
+	width:550px;
+		margin:0 auto;
+}
+.bo16 {
+	float:left;
+	margin:0 5px 5px 30px;
+}
+.bo17 {
+	float:left;
+	margin:0 5px 5px 10px;
+}
+.bo18 {
+	float:left;
+	margin:0 0 5px 10px;
+}

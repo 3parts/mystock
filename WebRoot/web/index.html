@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+	<script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext/ext-all.js"></script>
+    <script type="text/javascript" src="../ext/ext-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../ext/userExt/Ext.ux.js"></script>
+    
+    <script type="text/javascript">
+    Ext.onReady(function(){
+    	var arr = Ext.query("img");
+    	for(var i=0;i<arr.length;i++){
+    		var id = Ext.id();
+    		arr[i].id=id;
+    		var src = arr[i].src;
+
+    		if(src.indexOf("link111")>-1){ /*基础资料*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../../web/base-data.html','基础资料','jczl','menu-5');
+            	});
+    		}else if(src.indexOf("link222")>-1){ /*云通货*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../../web/yuntonghuo.html','云通货','yth','menu-1');
+            	});
+    		}else if(src.indexOf("link444")>-1) {/*云通宝*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../../web/yuntongbao.html','云通宝','ytb','menu-3');
+            	});
+    		}else if(src.indexOf("link333")>-1){ /*系统设置*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../../web/sys-manager.html','系统管理','xtgl','menu-6');
+            	});
+    		}else if(src.indexOf("linktoday")>-1){
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../purchase/today.jsp','今日报表','jrbb','');
+            	});
+    		}
+    	}
+    });
+    </script>
+    
+</head>
+<body>
+<div style="width:180px">
+<div><img src="images/link222.png" onmouseover="this.src='images/hover222.png'" onmouseout="this.src='images/link222.png'" onmousedown="this.src='images/press222.png'" onmouseup="this.src='images/hover222.png'"/></div>
+<div><img src="images/link444.png" onmouseover="this.src='images/hover444.png'" onmouseout="this.src='images/link444.png'" onmousedown="this.src='images/press444.png'" onmouseup="this.src='images/hover444.png'"/></div>
+<div><img src="images/linktoday.png" onmouseover="this.src='images/hovertoday.png'" onmouseout="this.src='images/linktoday.png'" onmousedown="this.src='images/presstoday.png'" onmouseup="this.src='images/hovertoday.png'"/></div>
+<div><img src="images/link111.png" onmouseover="this.src='images/hover111.png'" onmouseout="this.src='images/link111.png'" onmousedown="this.src='images/press111.png'" onmouseup="this.src='images/hover111.png'"/></div>
+<div><img src="images/link333.png" onmouseover="this.src='images/hover333.png'" onmouseout="this.src='images/link333.png'" onmousedown="this.src='images/press333.png'" onmouseup="this.src='images/hover333.png'"/></div>
+
+</div>
+</body>
+</html>

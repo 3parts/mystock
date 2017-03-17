@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>云通货</title>
+	<link type="text/css" rel="stylesheet" href="css/yuntonghuo.css" />
+	<script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext/ext-all.js"></script>
+    <script type="text/javascript" src="../ext/ext-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../ext/userExt/Ext.ux.js"></script>
+    
+    <script type="text/javascript">
+    	
+    	Ext.onReady(function(){
+    		
+    		var arr = Ext.query("img");
+    		for(var i=0;i<arr.length;i++){
+    			var id = Ext.id();
+    			arr[i].id=id;
+    			var src = arr[i].src;
+    			
+    			if(src.indexOf('link24')>-1){ /*仓库*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/stocklist.jsp','库存查询','kccx','');
+            		});
+    			}else if(src.indexOf('link25')>-1){ /*供应商*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../ziliao/gys.jsp','供应商管理','gysgl','');
+            		});
+    			}else if(src.indexOf('link26')>-1){ /*购进*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/purchase.jsp','购进','gj','');
+            		});
+    			}else if(src.indexOf('link27')>-1){ /*购退*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/return.jsp','购退','gt','');
+            		});
+    			}else if(src.indexOf('link28')>-1){ /*进出单据查询*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('','进出单据查询','jcdjcx','');
+            		});
+    			}else if(src.indexOf('link29')>-1){ /*进出商品查询*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/myjcsp.jsp','进出商品查询','jcspcx','');
+            		});
+    			}else if(src.indexOf('link30')>-1){ /*客户*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../ziliao/kh.jsp','客户管理','khgl','menu-52');
+            		});
+    			}else if(src.indexOf('link31')>-1){ /*库存盘点*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/inventory.jsp','库存盘点','kcpd','');
+            		});
+    			}else if(src.indexOf('link32')>-1){ /*拼包登记*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/spellpack.jsp','拼包登记','pbdj','');
+            		});
+    			}else if(src.indexOf('link33')>-1){ /*商品管理*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../ziliao/spxx.jsp','商品管理','spgl','menu-53');
+            		});
+    			}else if(src.indexOf('link34')>-1){ /*送货查询*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/delivery.jsp','送货查询','shcx','');
+            		});
+    			}else if(src.indexOf('link35')>-1){ /*销售*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/salenout.jsp','销售','xs','');
+            		});
+    			}else if(src.indexOf('link36')>-1){ /*销退*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/salenback.jsp','销退','xt','');
+            		});
+    			}else if(src.indexOf('link37')>-1){ /*信封打印*/
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/envelopeprint.jsp','信封打印','xfdy','');
+            		});
+    			}else if(src.indexOf('link00')>-1) /*库存调拨*/{
+    				Ext.get(id).on('click',function(){
+						parent.addNewTabPanel('../purchase/allocation.jsp','库存调拨','kcdb','');
+            		});
+    			}
+    			
+    		}
+    		
+    	});
+    	
+    </script>
+
+</head>
+<body>
+<div class="top">
+  <div class="box1">
+    <div class="bo-1">
+      <div class="bo1"><img src="images/arr-33.png"  height="50px" width="175px"/></div>
+      <div class="bo2"><img src="images/link27.png" onmouseover="this.src='images/hover27.png'" onmouseout="this.src='images/link27.png'" onmousedown="this.src='images/press27.png'" onmouseup="this.src='images/hover27.png'" /></div>
+      <div class="bo3"><img src="images/arr-21.png" height="20px" width="145px"/></div>
+    </div>
+    <div class="bo-2">
+      <div class="bo4"><img src="images/link25.png" onmouseover="this.src='images/hover25.png'" onmouseout="this.src='images/link25.png'" onmousedown="this.src='images/press25.png'" onmouseup="this.src='images/hover25.png'" /></div>
+      <div class="bo5"><img src="images/arr-11.png" height="25px" width="70px" /></div>
+      <div class="bo6"><img src="images/link26.png" onmouseover="this.src='images/hover26.png'" onmouseout="this.src='images/link26.png'" onmousedown="this.src='images/press26.png'" onmouseup="this.src='images/hover26.png'" /></div>
+      <div class="bo7"><img src="images/arr-11.png" height="25px" width="145px" /></div>
+    </div>
+   <div class="bo8"><img src="images/arr-14.png" height="50px" width="25px" /></div>
+    <div class="bo-3">
+      <!-- <div class="bo9"><img src="images/link28.png" onmouseover="this.src='images/hover28.png'" onmouseout="this.src='images/link28.png'" onmousedown="this.src='images/press28.png'" onmouseup="this.src='images/hover28.png'" /></div> -->
+      <div class="bo10"><img src="images/link29.png" onmouseover="this.src='images/hover29.png'" onmouseout="this.src='images/link29.png'" onmousedown="this.src='images/press29.png'" onmouseup="this.src='images/hover29.png'" /></div>
+    </div>
+    <div class="bo8"><img src="images/arr-13.png" height="50px" width="25px" /></div>
+    <!--  <div style="height:146px;"></div> -->
+    <div class="bo-2">
+      <div class="bo4"><img src="images/link30.png" onmouseover="this.src='images/hover30.png'" onmouseout="this.src='images/link30.png'" onmousedown="this.src='images/press30.png'" onmouseup="this.src='images/hover30.png'" /></div>
+      <div class="bo5"><img src="images/arr-12.png" height="25px" width="70px" /></div>
+      <div class="bo6"><img src="images/link35.png" onmouseover="this.src='images/hover35.png'" onmouseout="this.src='images/link35.png'" onmousedown="this.src='images/press35.png'" onmouseup="this.src='images/hover35.png'" /></div>
+      <div class="bo7"><img src="images/arr-12.png" height="25px" width="145px" /></div>
+    </div>
+    <div class="bo-1">
+      <div class="bo11"><img src="images/arr-44.png" height="50px"  width="175px"/></div>
+      <div class="bo12"><img src="images/link36.png" onmouseover="this.src='images/hover36.png'" onmouseout="this.src='images/link36.png'" onmousedown="this.src='images/press36.png'" onmouseup="this.src='images/hover36.png'" /></div>
+      <div class="bo13"><img src="images/arr-22.png" height="20px" width="145px"/></div>
+    </div>
+  </div>
+  <div class="box2"> <img src="images/link24.png" onmouseover="this.src='images/hover24.png'" onmouseout="this.src='images/link24.png'" onmousedown="this.src='images/press24.png'" onmouseup="this.src='images/hover24.png'" /> </div>
+  <div class="box3">
+    <div class="bo-4">
+      <div class="bo14"><img src="images/arr-11.png" height="25px" width="70px" /></div>
+      <div class="bo144"><img src="images/link33.png" onmouseover="this.src='images/hover33.png'" onmouseout="this.src='images/link33.png'" onmousedown="this.src='images/press33.png'" onmouseup="this.src='images/hover33.png'" /></div>
+    </div>
+    <div class="bo-4">
+      <div class="bo15"><img src="images/arr-11.png" height="20px" width="70px" /></div>
+      <div class="bo155"><img src="images/link31.png" onmouseover="this.src='images/hover31.png'" onmouseout="this.src='images/link31.png'" onmousedown="this.src='images/press31.png'" onmouseup="this.src='images/hover31.png'" /></div>
+    </div>
+     <div class="bo-4">
+      <div class="bo141"><img src="images/arr-11.png" height="25px" width="70px" /></div>
+      <div class="bo1441"><img src="images/link00.png" onmouseover="this.src='images/hover00.png'" onmouseout="this.src='images/link00.png'" onmousedown="this.src='images/press00.png'" onmouseup="this.src='images/hover00.png'" /></div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="bo16"><img src="images/link37.png" onmouseover="this.src='images/hover37.png'" onmouseout="this.src='images/link37.png'" onmousedown="this.src='images/press37.png'" onmouseup="this.src='images/hover37.png'" /></div>
+  <div class="bo17"><img src="images/link32.png" onmouseover="this.src='images/hover32.png'" onmouseout="this.src='images/link32.png'" onmousedown="this.src='images/press32.png'" onmouseup="this.src='images/hover32.png'" /></div>
+  <div class="bo18"><img src="images/link34.png" onmouseover="this.src='images/hover34.png'" onmouseout="this.src='images/link34.png'" onmousedown="this.src='images/press34.png'" onmouseup="this.src='images/hover34.png'" /></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>系统管理</title>
+	<link type="text/css" rel="stylesheet" href="css/sys-manager.css" />
+	<script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext/ext-all.js"></script>
+    <script type="text/javascript" src="../ext/ext-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../ext/userExt/Ext.ux.js"></script>
+    
+    <script type="text/javascript">
+    
+    Ext.onReady(function(){
+    	var arr = Ext.query("img");
+    	for(var i=0;i<arr.length;i++){
+    		var id = Ext.id();
+    		arr[i].id=id;
+    		var src = arr[i].src;
+    		
+    		if(src.indexOf('link13.png')>-1){ /*角色管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../power/role.jsp','角色管理','jsgl','menu-61');
+            	});
+    		}else if(src.indexOf('link14.png')>-1){ /*模板设置*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../power/printset.jsp','模板设置','mbsz','');
+            	});
+    		}else if(src.indexOf('link15.png')>-1){ /*企业管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../power/company.jsp','企业管理','qygl','menu-64');
+            	});
+    		}else if(src.indexOf('link16.png')>-1){ /*数据库管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../power/beifen.jsp','数据库管理','sjkgl','menu-63');
+            	});
+    		}else if(src.indexOf('link17.png')>-1){ /*用户管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../power/user.jsp','用户管理','yhgl','menu-62');
+            	});
+    		}else if(src.indexOf('link18.png')>-1){ /*用户权限*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../power/userright.jsp','用户权限','yhqx','');
+            	});
+    		}
+    		
+    	}
+    });
+    
+    </script>
+
+</head>
+<body>
+<div class="cla1"><img src="images/link15.png" onmouseover="this.src='images/hover15.png'" onmouseout="this.src='images/link15.png'" onmousedown="this.src='images/press15.png'" onmouseup="this.src='images/hover15.png'"/></div>
+<div class="cla2"><img src="images/link13.png" onmouseover="this.src='images/hover13.png'" onmouseout="this.src='images/link13.png'" onmousedown="this.src='images/press13.png'" onmouseup="this.src='images/hover13.png'" /></div>
+<div class="cla3"><img src="images/link17.png" onmouseover="this.src='images/hover17.png'" onmouseout="this.src='images/link17.png'" onmousedown="this.src='images/press17.png'" onmouseup="this.src='images/hover17.png'" /></div>
+<div class="cla4"><img src="images/link16.png" onmouseover="this.src='images/hover16.png'" onmouseout="this.src='images/link16.png'" onmousedown="this.src='images/press16.png'" onmouseup="this.src='images/hover16.png'" /></div>
+<!-- <div class="cla5"><img src="images/link18.png" onmouseover="this.src='images/hover18.png'" onmouseout="this.src='images/link18.png'" onmousedown="this.src='images/press18.png'" onmouseup="this.src='images/hover18.png'" /></div> -->
+<div class="cla5"><img src="images/link14.png" onmouseover="this.src='images/hover14.png'" onmouseout="this.src='images/link14.png'" onmousedown="this.src='images/press14.png'" onmouseup="this.src='images/hover14.png'" /></div>
+</body>
+</html>

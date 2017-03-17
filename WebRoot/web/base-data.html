@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>基础资料</title>
+	<link type="text/css" rel="stylesheet" href="css/base-data.css" />
+	<script type="text/javascript" src="../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext/ext-all.js"></script>
+    <script type="text/javascript" src="../ext/ext-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../ext/userExt/Ext.ux.js"></script>
+    
+    <script type="text/javascript">
+    
+    Ext.onReady(function(){
+    	var arr = Ext.query("img");
+    	for(var i=0;i<arr.length;i++){
+    		var id = Ext.id();
+    		arr[i].id=id;
+    		var src = arr[i].src;
+
+    		if(src.indexOf('link1.png')>-1){ /*仓库管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/warehouse.jsp','仓库管理','ckgl','');
+            	});
+    		}else if(src.indexOf('link2.png')>-1){/*供应商管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/gys.jsp','供应商管理','gysgl','');
+            	}); 
+    		}else if(src.indexOf('link3.png')>-1){/*计量单位*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/unit.jsp','计量单位管理','jldwgl','');
+            	}); 
+    		}else if(src.indexOf('link4.png')>-1){/*结算方式*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/settlement.jsp','结算方式管理','jsfsgl','');
+            	}); 
+    		}else if(src.indexOf('link5.png')>-1){/*客户管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/kh.jsp','客户管理','khgl','menu-52');
+            	}); 
+    		}else if(src.indexOf('link6.png')>-1){/*配送方式管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/logistics.jsp','配送方式管理','psfsgl','');
+            	}); 
+    		}else if(src.indexOf('link7.png')>-1){/*商品管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/spxx.jsp','商品管理','spgl','menu-53');
+            	}); 
+    		}else if(src.indexOf('link8.png')>-1){/*物流公司*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/logisticscompany.jsp','物流公司','wlgs','');
+            	}); 
+    		}else if(src.indexOf('link9.png')>-1){/*员工资料*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/person.jsp','员工资料','ygzl','');
+            	}); 
+    		}else if(src.indexOf('link10.png')>-1){/*账户*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/account.jsp','账户','zh','');
+            	}); 
+    		}else if(src.indexOf('link11.png')>-1){/*账目类型*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/accounttype.jsp','账目类型','zmlx','');
+            	}); 
+    		}else if(src.indexOf('link12.png')>-1){/*职位管理*/
+    			Ext.get(id).on('click',function(){
+					parent.addNewTabPanel('../ziliao/position.jsp','职位管理','zwgl','');
+            	}); 
+    		}
+    	}
+    });
+    
+    </script>
+    
+</head>
+<body>
+<div class="cla1"><img src="images/link2.png" onmouseover="this.src='images/hover2.png'" onmouseout="this.src='images/link2.png'" onmousedown="this.src='images/press2.png'" onmouseup="this.src='images/hover2.png'"/></div>
+<div class="cla1"><img src="images/link5.png" onmouseover="this.src='images/hover5.png'" onmouseout="this.src='images/link5.png'" onmousedown="this.src='images/press5.png'" onmouseup="this.src='images/hover5.png'" /></div>
+<div class="cla1"><img src="images/link7.png" onmouseover="this.src='images/hover7.png'" onmouseout="this.src='images/link7.png'" onmousedown="this.src='images/press7.png'" onmouseup="this.src='images/hover7.png'" /></div>
+<div class="cla1"><img src="images/link1.png" onmouseover="this.src='images/hover1.png'" onmouseout="this.src='images/link1.png'" onmousedown="this.src='images/press1.png'" onmouseup="this.src='images/hover1.png'" /></div>
+<div class="cla1"><img src="images/link3.png" onmouseover="this.src='images/hover3.png'" onmouseout="this.src='images/link3.png'" onmousedown="this.src='images/press3.png'" onmouseup="this.src='images/hover3.png'" /></div>
+<div class="cla1"><img src="images/link4.png" onmouseover="this.src='images/hover4.png'" onmouseout="this.src='images/link4.png'" onmousedown="this.src='images/press4.png'" onmouseup="this.src='images/hover4.png'" /></div>
+<div class="cla1"><img src="images/link6.png" onmouseover="this.src='images/hover6.png'" onmouseout="this.src='images/link6.png'" onmousedown="this.src='images/press6.png'" onmouseup="this.src='images/hover6.png'" /></div>
+<div class="cla1"><img src="images/link8.png" onmouseover="this.src='images/hover8.png'" onmouseout="this.src='images/link8.png'" onmousedown="this.src='images/press8.png'" onmouseup="this.src='images/hover8.png'" /></div>
+<div class="cla1"><img src="images/link11.png" onmouseover="this.src='images/hover11.png'" onmouseout="this.src='images/link11.png'" onmousedown="this.src='images/press11.png'" onmouseup="this.src='images/hover11.png'" /></div>
+<div class="cla1"><img src="images/link10.png" onmouseover="this.src='images/hover10.png'" onmouseout="this.src='images/link10.png'" onmousedown="this.src='images/press10.png'" onmouseup="this.src='images/hover10.png'" /></div>
+<div class="cla1"><img src="images/link12.png" onmouseover="this.src='images/hover12.png'" onmouseout="this.src='images/link12.png'" onmousedown="this.src='images/press12.png'" onmouseup="this.src='images/hover12.png'" /></div>
+<div class="cla1"><img src="images/link9.png" onmouseover="this.src='images/hover9.png'" onmouseout="this.src='images/link9.png'" onmousedown="this.src='images/press9.png'" onmouseup="this.src='images/hover9.png'" /></div>
+</body>
+</html>

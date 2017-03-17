@@ -1,0 +1,227 @@
+﻿Object Report
+	Version='6.0.0.2'
+	Title='1a.简单表格'
+	Author='锐浪报表软件'
+	Description='演示一个最基本的列表报表。'
+	Object Font
+		Name='宋体'
+		Size=90000,0
+		Weight=400
+		Charset=134
+	End
+	Object Printer
+		Size=256
+		Width=12.4
+		Height=18.9
+		Oriention=Landscape
+		LeftMargin=0
+		TopMargin=0
+		RightMargin=0
+		BottomMargin=0
+	End
+	Object DetailGrid
+		Object Recordset
+			Items Field
+				Item
+					Name='dtBs'
+					Type=DateTime
+					Format='M/d'
+				End
+				Item
+					Name='khName'
+				End
+				Item
+					Name='lxtel'
+				End
+				Item
+					Name='dlSumMoney'
+					Type=Currency
+					Format='0元整;;#'
+				End
+				Item
+					Name='vcAddress'
+				End
+				Item
+					Name='vcPhone'
+				End
+				Item
+					Name='配送方式'
+				End
+				Item
+					Name='id'
+				End
+				Item
+					Name='lxren'
+				End
+			End
+		End
+		Items Column
+			Item
+				Name='dtBs'
+				Width=18.9
+			End
+		End
+		Object ColumnContent
+			Height=0
+			Items ColumnContentCell
+				Item
+					Column='dtBs'
+					DataField='dtBs'
+				End
+			End
+		End
+		Object ColumnTitle
+			Height=0
+			RepeatStyle=OnGroupHeader
+			Items ColumnTitleCell
+				Item
+					GroupTitle=F
+					Column='dtBs'
+					TextAlign=MiddleCenter
+				End
+			End
+		End
+		Items Group
+			Item
+				Name='Group1'
+				ByFields='id'
+				Object GroupHeader
+					Height=8.2
+					PrintGridBorder=F
+					Items Control
+						Item
+							Type=FieldBox
+							Name='FieldBox1'
+							Left=6.40292
+							Top=2.19604
+							Width=11.5888
+							Height=1.00542
+							Object Font
+								Name='微软雅黑'
+								Size=217500,0
+								Weight=400
+								Charset=134
+							End
+							ShrinkFontToFit=T
+							DataField='khName'
+						End
+						Item
+							Type=FieldBox
+							Name='FieldBox2'
+							Left=6.40292
+							Top=4.78896
+							Width=11.5888
+							Height=0.820208
+							Object Font
+								Name='微软雅黑'
+								Size=180000,0
+								Weight=400
+								Charset=134
+							End
+							ShrinkFontToFit=T
+							DataField='lxtel'
+						End
+						Item
+							Type=FieldBox
+							Name='FieldBox4'
+							Left=7.80521
+							Top=6.40292
+							Width=6.79979
+							Height=1.00542
+							Object Font
+								Name='微软雅黑'
+								Size=217500,0
+								Weight=400
+								Charset=134
+							End
+							ShrinkFontToFit=T
+							DataField='dlSumMoney'
+						End
+						Item
+							Type=SystemVarBox
+							Name='SystemVarBox1'
+							Left=12.5942
+							Top=1.00542
+							Width=2.59292
+							Height=1
+							Object Font
+								Name='微软雅黑'
+								Size=217500,0
+								Weight=400
+								Charset=134
+							End
+							Format='d/M'
+							SystemVar=CurrentDateTime
+						End
+						Item
+							Type=StaticBox
+							Name='StaticBox1'
+							Left=6.40292
+							Top=6.40292
+							Width=1.40229
+							Height=1
+							Object Font
+								Name='微软雅黑'
+								Size=217500,0
+								Weight=400
+								Charset=134
+							End
+							Text='￥:'
+						End
+						Item
+							Type=FieldBox
+							Name='FieldBox5'
+							Left=6.40292
+							Top=3.99521
+							Width=11.5888
+							Height=0.79375
+							Object Font
+								Name='微软雅黑'
+								Size=180000,0
+								Weight=400
+								Charset=134
+							End
+							ShrinkFontToFit=T
+							DataField='vcPhone'
+						End
+						Item
+							Type=FieldBox
+							Name='FieldBox6'
+							Left=7.01146
+							Top=1.00542
+							Width=5.3975
+							Height=1
+							Object Font
+								Name='微软雅黑'
+								Size=217500,0
+								Weight=400
+								Charset=134
+							End
+							ShrinkFontToFit=T
+							DataField='配送方式'
+						End
+						Item
+							Type=FieldBox
+							Name='FieldBox7'
+							Left=6.40292
+							Top=3.20146
+							Width=11.5888
+							Height=0.79375
+							Object Font
+								Name='宋体'
+								Size=217500,0
+								Bold=T
+								Charset=134
+							End
+							DataField='lxren'
+						End
+					End
+				End
+				Object GroupFooter
+					Height=0
+					NewPage=After
+				End
+			End
+		End
+	End
+End

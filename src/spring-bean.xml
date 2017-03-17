@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!--==========================================  dao  ==========================================-->
+    <bean id="baseDao" class="com.cxstock.dao.impl.BaseDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="dqkcDao" class="com.cxstock.dao.impl.DqkcDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="orderDao" class="com.cxstock.dao.impl.OrderDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!--==========================================  biz  ==========================================-->
+	
+	<!-- 用户管理 -->
+	<bean id="userBiz" class="com.cxstock.biz.power.imp.UserBizImpl">
+		<property name="baseDao" ref="orderDao"/>
+	</bean>
+	
+	<!-- 角色管理 -->
+	<bean id="roleBiz" class="com.cxstock.biz.power.imp.RoleBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 供应商管理 -->
+	<bean id="gysBiz" class="com.cxstock.biz.ziliao.imp.GysBizImpl">
+		<property name="baseDao" ref="orderDao"/>
+	</bean>
+	<!-- 客户管理 -->
+	<bean id="khBiz" class="com.cxstock.biz.ziliao.imp.KhBizImpl">
+		<property name="baseDao" ref="orderDao"/>
+	</bean>
+	<!-- 商品管理 -->
+	<bean id="spxxBiz" class="com.cxstock.biz.ziliao.imp.SpxxBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 库存管理 -->
+	<bean id="kcBiz" class="com.cxstock.biz.ziliao.imp.KcBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 商品类别管理 -->
+	<bean id="splbBiz" class="com.cxstock.biz.ziliao.imp.SplbBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 单位管理 -->
+	<bean id="spdwBiz" class="com.cxstock.biz.ziliao.imp.SpdwBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	
+	<!-- 进货管理 -->
+	<bean id="jhBiz" class="com.cxstock.biz.jinhuo.imp.JhBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 销售管理 -->
+	<bean id="xsBiz" class="com.cxstock.biz.chushou.imp.XsBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 库存管理 -->
+	<bean id="bsyBiz" class="com.cxstock.biz.kucun.imp.BsyBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 库存查询 -->
+	<bean id="searchBiz" class="com.cxstock.biz.kucun.imp.SearchBizImpl">
+		<property name="dqkcDao" ref="dqkcDao"/>
+	</bean>
+	<!-- 统计报表 -->
+	<bean id="tongjiBiz" class="com.cxstock.biz.tongji.imp.TongjiBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 测试管理 -->
+	<bean id="csBiz" class="com.cxstock.biz.ceshi.imp.CsBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 企业管理-->
+	<bean id="qyBiz" class="com.cxstock.biz.ziliao.imp.QyBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 用户权限-->
+	<bean id="userrightBiz" class="com.cxstock.biz.userright.imp.UserrightBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 仓库管理-->
+	<bean id="ckBiz" class="com.cxstock.biz.ziliao.imp.CkBizImpl">
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<!-- 计量单位管理-->
+	<bean id="utBiz" class="com.cxstock.biz.ziliao.imp.UtBizImpl">
+		<property name="baseDao" ref="orderDao"/>
+	</bean>
+	<!-- 员工资料-->
+	<bean id="psBiz" class="com.cxstock.biz.ziliao.imp.PsBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 进货管理-->
+	<bean id="phBiz" class="com.cxstock.biz.purchase.imp.PhBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 退货管理-->
+	<bean id="returnBiz" class="com.cxstock.biz.purchase.imp.ReturnBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 销售管理 -->
+	<bean id="salenoutBiz" class="com.cxstock.biz.purchase.imp.SalenoutBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	
+	<!-- 销退管理 -->
+	<bean id="salenbackBiz" class="com.cxstock.biz.purchase.imp.SalenbackBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 调拨管理 -->
+	<bean id="altBiz" class="com.cxstock.biz.purchase.imp.AltBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	
+	<!-- 库存盘点 -->
+	<bean id="ivtBiz" class="com.cxstock.biz.purchase.imp.IvtBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 拼包 -->
+	<bean id="spkBiz" class="com.cxstock.biz.purchase.imp.SpkBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 送货登记 -->
+	<bean id="dlyBiz" class="com.cxstock.biz.purchase.imp.DlyBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 其他操作 -->
+	<bean id="otherBiz" class="com.cxstock.biz.purchase.imp.OtherBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 打印模板 -->
+	<bean id="printBiz" class="com.cxstock.biz.print.imp.PrintBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 收入 -->
+	<bean id="imeBiz" class="com.cxstock.biz.financial.imp.ImeBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 支出 -->
+	<bean id="omeBiz" class="com.cxstock.biz.financial.imp.OmeBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 应收 -->
+	<bean id="arBiz" class="com.cxstock.biz.financial.imp.ArBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 应付 -->
+	<bean id="apBiz" class="com.cxstock.biz.financial.imp.ApBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	<!-- 企业申请 -->
+	<bean id="outerBiz" class="com.cxstock.biz.outer.imp.OuterBizImpl">
+		<property name="orderDao" ref="orderDao"/>
+	</bean>
+	
+	
+	<!--==========================================  action  ==========================================-->
+	<!-- 用户管理 -->
+	<bean id="userAction" class="com.cxstock.action.power.UserAction" scope="prototype">
+		<property name="userBiz" ref="userBiz"/>
+	</bean>
+	<!-- 角色管理 -->
+	<bean id="roleAction" class="com.cxstock.action.power.RoleAction" scope="prototype">
+		<property name="roleBiz" ref="roleBiz"/>
+	</bean>
+	<!-- 供应商管理 -->
+	<bean id="gysAction" class="com.cxstock.action.ziliao.GysAction" scope="prototype">
+		<property name="gysBiz" ref="gysBiz"/>
+	</bean>
+	<!-- 客户管理 -->
+	<bean id="khAction" class="com.cxstock.action.ziliao.KhAction" scope="prototype">
+		<property name="khBiz" ref="khBiz"/>
+	</bean>
+	<!-- 商品管理 -->
+	<bean id="spxxAction" class="com.cxstock.action.ziliao.SpxxAction" scope="prototype">
+		<property name="spxxBiz" ref="spxxBiz"/>
+	</bean>
+	<!-- 库存管理 -->
+	<bean id="kcAction" class="com.cxstock.action.ziliao.KcAction" scope="prototype">
+		<property name="kcBiz" ref="kcBiz"/>
+	</bean>
+	<!-- 商品类别管理 -->
+	<bean id="splbAction" class="com.cxstock.action.ziliao.SplbAction" scope="prototype">
+		<property name="splbBiz" ref="splbBiz"/>
+	</bean>
+	<!-- 单位管理 -->
+	<bean id="spdwAction" class="com.cxstock.action.ziliao.SpdwAction" scope="prototype">
+		<property name="spdwBiz" ref="spdwBiz"/>
+	</bean>
+	
+	<!-- 进货管理 -->
+	<bean id="jhAction" class="com.cxstock.action.jinhuo.JhAction" scope="prototype">
+		<property name="jhBiz" ref="jhBiz"/>
+	</bean>
+	<!-- 销售管理 -->
+	<bean id="xsAction" class="com.cxstock.action.chushou.XsAction" scope="prototype">
+		<property name="xsBiz" ref="xsBiz"/>
+	</bean>
+	<!-- 库存管理 -->
+	<bean id="bsyAction" class="com.cxstock.action.kucun.BsyAction" scope="prototype">
+		<property name="bsyBiz" ref="bsyBiz"/>
+	</bean>
+	<!-- 库存查询 -->
+	<bean id="searchAction" class="com.cxstock.action.kucun.SearchAction" scope="prototype">
+		<property name="searchBiz" ref="searchBiz"/>
+	</bean>
+	<!-- 统计报表 -->
+	<bean id="tongjiAction" class="com.cxstock.action.tongji.TongjiAction" scope="prototype">
+		<property name="tongjiBiz" ref="tongjiBiz"/>
+	</bean>
+	<!-- 测试管理 -->
+	<bean id="csAction" class="com.cxstock.action.ceshi.CsAction" scope="prototype">
+		 <property name="csBiz" ref="csBiz"/>
+	</bean>
+		<!-- 企业管理 -->
+	<bean id="qyAction" class="com.cxstock.action.ziliao.QyAction" scope="prototype">
+		 <property name="qyBiz" ref="qyBiz"/>
+	</bean>
+		<!-- 用户权限 -->
+	<bean id="urAction" class="com.cxstock.action.userright.UrAction" scope="prototype">
+		 <property name="userrightBiz" ref="userrightBiz"/>
+	</bean>
+		<!-- 仓库管理 -->
+	<bean id="ckAction" class="com.cxstock.action.ziliao.CkAction" scope="prototype">
+		 <property name="ckBiz" ref="ckBiz"/>
+	</bean>
+	<!-- 计量单位管理 -->
+	<bean id="utAction" class="com.cxstock.action.ziliao.UtAction" scope="prototype">
+		 <property name="utBiz" ref="utBiz"/>
+	</bean>
+	<!-- 员工资料 -->
+	<bean id="psAction" class="com.cxstock.action.ziliao.PsAction" scope="prototype">
+		 <property name="psBiz" ref="psBiz"/>
+	</bean>
+	<!-- 进货管理 -->
+	<bean id="phAction" class="com.cxstock.action.purchase.PhAction" scope="prototype">
+		 <property name="phBiz" ref="phBiz"/>
+	</bean>
+	<!-- 退货管理 -->
+	<bean id="returnAction" class="com.cxstock.action.purchase.ReturnAction" scope="prototype">
+		 <property name="returnBiz" ref="returnBiz"/>
+	</bean>
+	<!-- 销售管理 -->
+	<bean id="salenoutAction" class="com.cxstock.action.purchase.SalenoutAction" scope="prototype">
+		 <property name="salenoutBiz" ref="salenoutBiz"/>
+	</bean>
+	<!-- 销退管理 -->
+	<bean id="salenbackAction" class="com.cxstock.action.purchase.SalenbackAction" scope="prototype">
+		 <property name="salenbackBiz" ref="salenbackBiz"/>
+	</bean>
+	<!-- 调拨管理 -->
+	<bean id="altAction" class="com.cxstock.action.purchase.AltAction" scope="prototype">
+		 <property name="altBiz" ref="altBiz"/>
+	</bean>
+	<!-- 库存盘点 -->
+	<bean id="ivtAction" class="com.cxstock.action.purchase.IvtAction" scope="prototype">
+		 <property name="ivtBiz" ref="ivtBiz"/>
+	</bean>
+	<!-- 拼包 -->
+	<bean id="spkAction" class="com.cxstock.action.purchase.SpkAction" scope="prototype">
+		 <property name="spkBiz" ref="spkBiz"/>
+	</bean>
+	<!-- 送货登记 -->
+	<bean id="dlyAction" class="com.cxstock.action.purchase.DlyAction" scope="prototype">
+		 <property name="dlyBiz" ref="dlyBiz"/>
+	</bean>
+	<!-- 其他操作 -->
+	<bean id="otherAction" class="com.cxstock.action.purchase.OtherAction" scope="prototype">
+		 <property name="otherBiz" ref="otherBiz"/>
+	</bean>
+	<!-- 打印模板 -->
+	<bean id="printAction" class="com.cxstock.action.print.PrintAction" scope="prototype">
+		 <property name="printBiz" ref="printBiz"/>
+	</bean>
+	<!-- 收入 -->
+	<bean id="imeAction" class="com.cxstock.action.financial.ImeAction" scope="prototype">
+		 <property name="imeBiz" ref="imeBiz"/>
+	</bean>
+	<!-- 支出-->
+	<bean id="omeAction" class="com.cxstock.action.financial.OmeAction" scope="prototype">
+		 <property name="omeBiz" ref="omeBiz"/>
+	</bean>
+	<!-- 支出-->
+	<bean id="arAction" class="com.cxstock.action.financial.ArAction" scope="prototype">
+		 <property name="arBiz" ref="arBiz"/>
+	</bean>
+	<!-- 支出-->
+	<bean id="apAction" class="com.cxstock.action.financial.ApAction" scope="prototype">
+		 <property name="apBiz" ref="apBiz"/>
+	</bean>
+	<!-- 企业申请-->
+	<bean id="outerAction" class="com.cxstock.action.outer.OuterAction" scope="prototype">
+		 <property name="outerBiz" ref="outerBiz"/>
+	</bean>
+	
+	<!-- 数据库备份 -->
+	<bean id="dataCopyAction" class="com.cxstock.action.power.DataCopyAction" scope="prototype">
+	</bean>
+</beans>
